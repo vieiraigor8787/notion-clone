@@ -151,11 +151,11 @@ export const restore = mutation({
       }
     }
 
-    await ctx.db.patch(args.id, options)
+    const document = await ctx.db.patch(args.id, options)
 
     recursiveRestore(args.id)
 
-    return existingDoc
+    return document
   },
 })
 
