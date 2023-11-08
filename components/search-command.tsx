@@ -3,6 +3,7 @@
 import { useQuery } from 'convex/react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { File } from 'lucide-react'
 
 import { useUser } from '@clerk/clerk-react'
 import { api } from '@/convex/_generated/api'
@@ -16,7 +17,6 @@ import {
   CommandItem,
   CommandList,
 } from './ui/command'
-import { File } from 'lucide-react'
 
 export const SearchCommand = () => {
   const { user } = useUser()
