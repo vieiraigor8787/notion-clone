@@ -13,7 +13,7 @@ interface BannerProps {
   documentId: Id<'documents'>
 }
 
-const Banner = ({ documentId }: BannerProps) => {
+export const Banner = ({ documentId }: BannerProps) => {
   const router = useRouter()
 
   const remove = useMutation(api.documents.remove)
@@ -63,5 +63,3 @@ const Banner = ({ documentId }: BannerProps) => {
     </div>
   )
 }
-
-export default Banner
