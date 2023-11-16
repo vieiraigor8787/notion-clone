@@ -20,7 +20,13 @@ export const Navbar = ({ onResetWidth, isCollapsed }: NavbarProps) => {
     documentId: params.documentId as Id<'documents'>,
   })
 
-  if (docId === undefined) return <p className="">Carregando...</p>
+  if (docId === undefined) {
+    return (
+      <nav className="bg-background dark:bg-[#1F1F1F] px-3 py-2 w-full">
+        <Title.Skeleton />
+      </nav>
+    )
+  }
 
   if (docId === null) return null
 
