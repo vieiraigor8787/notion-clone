@@ -110,7 +110,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
       ) : (
         <div
           onClick={enableInput}
-          className="pb-[11.5px] text-5xl font-bold break-words outline-dashed"
+          className="pb-[11.5px] text-5xl font-bold break-words text-[#3f3f3f] dark:text-[#cfcfcf] outline-none"
         >
           {initialData.title}
         </div>
