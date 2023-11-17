@@ -53,9 +53,9 @@ export const Publish = ({ initialData }: PublishProps) => {
     }).finally(() => setIsSubmitting(false))
 
     toast.promise(promise, {
-      loading: 'Despublicando...',
-      success: 'Documento despublicado com sucesso!',
-      error: 'Falha ao despublicar documento',
+      loading: 'Atualizando...',
+      success: 'Documento definido com rascunho',
+      error: 'Falha ao definir como rascunho',
     })
   }
 
@@ -72,7 +72,7 @@ export const Publish = ({ initialData }: PublishProps) => {
     <Popover>
       <PopoverTrigger asChild>
         <Button size="sm" variant="ghost">
-          Publicar{' '}
+          {!initialData.isPublished ? 'Publicar' : 'Tornar rascunho'}
           {initialData.isPublished && (
             <Globe className="text-sky-500 w-4 h-4 ml-2" />
           )}
@@ -103,6 +103,14 @@ export const Publish = ({ initialData }: PublishProps) => {
                 )}
               </Button>
             </div>
+            <Button
+              size="sm"
+              className="w-full text-xs"
+              disabled={isSubmitting}
+              onClick={onUnpublish}
+            >
+              Tornar não público
+            </Button>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
